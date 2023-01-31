@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    <style>
+        ul{
+            display: flex;
+        padding: 1rem;
+        justify-content: space-between;
+        background-color: yellowgreen;
+        }
+        .b {
+            padding: 2rem;
+            background-color: wheat;
+        }
+   
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <h4><a href="/employees">Home Page</a></h4>
+            <h4><a href="/create">Add Staffs</a></h4>
+        </ul>
+    </nav>
+    <div class="b">
+        <h1>Add a new employee</h1>
+        <form action="/employees" method="post">
+            <div>
+                <label for="name"> Full Name</label><br>
+                <input type="name" required id="name" name="name"/><br>
+                <label for="role">Role</label><br>
+                <input type="text" required id="role" name="role"/><br>
+                <label for="age">AGE</label><br>
+                <input type="number" required id="age" name="age"/><br><br>
+            </div>
+            <div>
+                <button type="submit">SUBMIT</button>
+            </div>
+        </form>
+
+    </div>
+  
+
+
+</body>
+</html>

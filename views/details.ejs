@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Details</title>
+    <style>
+        ul{
+            display: flex;
+        padding: 1rem;
+        justify-content: space-between;
+        background-color: yellowgreen;
+        }
+        .b {
+            padding: 2rem;
+            background-color: wheat;
+        }
+   
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <h4><a href="/employees">Home Page</a></h4>
+            <h4><a href="/create">Add Staffs</a></h4>
+        </ul>
+    </nav>
+    <div class="b">
+        <h1>Detials about this Employees</h1>
+        <h2><%= employee.name %></h2>
+        <h3><%= employee.role%></h3>
+        <p><%= employee.age %></p>
+        <a class="del" data-item="<%= employee._id %>"><button>Delete</button></a>
+    </div>
+    <script>
+      const remove =  document.querySelector('.del')
+      console.log(remove);
+        remove.addEventListener('click', () =>{
+           const url = `/employees/${remove.dataset.item}`
+           fetch(url, {method: 'DELETE',
+         }).then((response)=> response.json())
+         .then((data)=>{
+          window.location.href = data.redirect
+         }).catch((error)=> console.log(error)); 
+        });
+    </script>
+</body>
+</html>

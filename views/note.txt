@@ -1,0 +1,6 @@
+views 
+landing page for all employees
+details page to read information about a single employees
+delete functionality (delete employees)
+create a new employee page making a post  request to our srver to create a new employee
+taking back to the home page after  a successful post request

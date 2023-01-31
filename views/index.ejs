@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Employees HomePage</title>
+    <style>
+        ul{
+            display: flex;
+        padding: 1rem;
+        justify-content: space-between;
+        background-color: yellowgreen;
+        }
+        .b {
+            padding: 2rem;
+            background-color: wheat;
+        }
+   
+    </style>
+
+    
+</head>
+<body>
+    <nav>
+        <ul>
+            <h4><a href="/employees">Home Page</a></h4>
+            <h4><a href="/create">Add Staffs</a></h4>
+        </ul>
+    </nav>
+    <div class="b">
+        <h1>All Employees</h1>
+
+    <% if (employees.length > 0) { %>
+        <h1>List of all employee</h1>
+        <% employees.forEach((e) => { %>
+            <h2> <%= e.name %></h2> 
+            <a href="/employees/<%= e._id %>">Read more</a>
+                   
+      <% })%>
+
+    <%}else{ %>
+        <h1>There is no employee to display</h1>
+    <% }%>
+
+    </div>
+    
+    
+</body>
+</html>
